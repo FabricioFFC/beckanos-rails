@@ -1,0 +1,11 @@
+h1. Beckanos - Rails
+
+h2. Como configurar a aplicação
+
+Para você rodar a aplicação, execute os seguintes comandos:
+
+<pre>  $ git clone git://github.com/FabricioFFC/beckanos-rails.git && cd beckanos-rails
+  $ rake gems:install
+</pre>
+
+Não se esqueça de configurar a conexão com o seu banco de dados, editando o arquivo 'database.yml' na pasta config do projeto.
