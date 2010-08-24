@@ -1,0 +1,25 @@
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :username, "Usuário"%><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password, "Senha" %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Confirmação da senha" %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.label :email, "E-mail" %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+
+
+

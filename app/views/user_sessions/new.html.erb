@@ -1,0 +1,18 @@
+<title>Beckanos - A Rede Social da PRW Energia!</title>
+
+<div id="login_div">
+  <span class="titulo">Beckanos</span><br/><span class="descricao">a rede social da PRW Energia</span><br/>
+  <% form_for @user_session do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :username, "Usuário" %>
+      <%= f.text_field :username, :size => 20 %>
+    </p>
+    <p>
+      <%= f.label :password, "Senha:" %>
+      <%= f.password_field :password, :size => 20 %>
+    </p>
+    <%= f.submit "Login" %>
+  <% end %>
+  <hr>
+</div>

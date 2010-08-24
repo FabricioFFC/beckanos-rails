@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="shortcut icon" href="/images/logo-z-favicon.png" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta content="pt-BR" http-equiv="Content-Language" />
+    <%= stylesheet_link_tag :all, :cache => true %>
+  </head>
+  <body>
+      <div class ="flash">
+        <p class="success"><%= flash[:success] %></p>
+        <p class="notice"><%= flash[:notice] %></p>
+        <p class="alert"><%= flash[:alert] %></p>
+      </div>
+      <%= yield %>
+  </body>
+</html>
