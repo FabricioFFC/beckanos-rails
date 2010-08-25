@@ -9,11 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824050856) do
+ActiveRecord::Schema.define(:version => 20100825143403) do
+
+  create_table "messages", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
+    t.integer  "age"
+    t.string   "civil",             :limit => 1
+    t.string   "gender",            :limit => 1
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"

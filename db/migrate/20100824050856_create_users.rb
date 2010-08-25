@@ -3,6 +3,9 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username
       t.string :email
+      t.integer :age
+      t.string :civil, :limit => 1
+      t.string :gender, :limit => 1
       t.string :crypted_password
       t.string :password_salt
       t.string :persistence_token

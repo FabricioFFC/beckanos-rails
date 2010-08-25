@@ -1,6 +1,5 @@
 <title>Beckanos - Home</title>
 <div id="content_div">
- <h4> Teste <%=@current_user%></h4>
   <div id="actions_div">
 	  <%=link_to "Home", root_url%>
     <%=link_to "Logout", logout_path%>
@@ -17,18 +16,21 @@
   <div id="left_div">
     <span class="titulo">Beckanos</span><br/>
     <span class="descricao">a rede social da PRW Energia</span><br/>
-
     <h2>O que está rolando na PRW Energia?</h2>
-
     Atualize seu status...<br/>
     <table>
       <tr>
         <td><%=image_tag("2.png")%></td>
         <td>
-	        <form>
-	        <textarea rows="2" cols="60"></textarea><br/>
-	        <input type="submit" value="Atualizar"/>
-	        </form>
+        <% form_for(@message) do |f| %>
+          <p>
+            <%= f.label :content, "Messagem" %><br />
+            <%= f.text_area (:content, :cols => 50, :rows => 2) %>
+          </p>
+          <p>
+            <%= f.submit "Compartilhar" %>
+          </p>
+        <% end %>
         </td>
       </tr>
     </table>
