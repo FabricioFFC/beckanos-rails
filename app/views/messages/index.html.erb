@@ -36,18 +36,21 @@
     </table>
     <hr/>
     <br/>
-    <% for i in (2..7) %>
+    <% @messages.each do |message| %>
       <table>
         <tr>
-        <td><%=image_tag("#{i}.png")%></td>
+        <td><%=image_tag("2.png")%></td>
         <td>
-        <span class="usuario_diz">@JonKern diz:</span>
-        <div id="atualizacao_status">Blá blá blá blá blá blá....</div>
-        <span class="tempo_atras">a 20 minutos atrás</span>
+        <span class="usuario_diz"><%=User.find(message.user_id).username%> diz:</span>
+        <div id="atualizacao_status"><%=message.content%></div>
+        <span class="tempo_atras"><%=time_ago_in_words(message.created_at)%></span>
         </td>
         </tr>
       </table>
       <hr/>
+    <% end %>
+    <% if @messages.count == 0 %>
+      Não há mensagens.
     <% end %>
   </div>
 </div>

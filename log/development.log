@@ -4838,3 +4838,533 @@ Migrating to CreateOpinions (20100825171403)
   [4;35;1mSQL (32.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100825143403')[0m
   [4;36;1mSQL (32.7ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100825133403')[0m
   [4;35;1mSQL (43.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100824050856')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 15:29:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 23ms (View: 10, DB: 2) | 200 OK [http://localhost/messages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 15:29:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 27ms (View: 12, DB: 2) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:25:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+Rendering template within layouts/application
+Rendering messages/index
+ERROR: compiling _run_erb_app47views47messages47index46html46erb RAISED compile error
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:45: syntax error, unexpected '<'
+; @output_buffer.concat((message.content></div>
+                                          ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:46: unknown regexp options - pa
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:47: syntax error, unexpected '<'
+        </td>
+         ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:48: unknown regexp options - tr
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:49: syntax error, unexpected '<'
+      </table>
+       ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:51: syntax error, unexpected '<'
+    <% end ).to_s); @output_buffer.concat "\n  </div>\n</div>\n"
+     ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:55: syntax error, unexpected kENSURE, expecting kEND
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:57: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47messages47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<title>Beckanos - Home</title>\n<div id=\"content_div\">\n  <div id=\"actions_div\">\n\t  "
+
+
+; @output_buffer.concat((link_to "Home", root_url).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat((link_to "Logout", logout_path).to_s); @output_buffer.concat "\n\t  <a href='/busca'/>Busca</a>\n  </div>\n  \n  <div id=\"right_div\">\n\t  "
+
+
+
+
+; @output_buffer.concat((image_tag("2.png")).to_s); @output_buffer.concat "<br/>\n\t  <span class=\"profile_login\">@kentbeck</span><br/>\n\t  Kent Beck<br/>\n\t  <span class=\"profile_dados\">Casado, 52 anos</span>\n  </div>\n\t\t\n  <div id=\"left_div\">\n    <span class=\"titulo\">Beckanos</span><br/>\n    <span class=\"descricao\">a rede social da PRW Energia</span><br/>\n    <h2>O que est\303\241 rolando na PRW Energia?</h2>\n    Atualize seu status...<br/>\n    <table>\n      <tr>\n        <td>"
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat((image_tag("2.png")).to_s); @output_buffer.concat "</td>\n        <td>\n        "
+
+;  form_for(@message) do |f| ; @output_buffer.concat "\n          <p>\n            "
+
+; @output_buffer.concat(( f.label :content, "Messagem" ).to_s); @output_buffer.concat "<br />\n            "
+; @output_buffer.concat(( f.text_area (:content, :cols => 50, :rows => 2) ).to_s); @output_buffer.concat "\n          </p>\n          <p>\n            "
+
+
+; @output_buffer.concat(( f.submit "Compartilhar" ).to_s); @output_buffer.concat "\n          </p>\n        "
+
+;  end ; @output_buffer.concat "\n        </td>\n      </tr>\n    </table>\n    <hr/>\n    <br/>\n    "
+
+
+
+
+
+;  @messages.each do |message| ; @output_buffer.concat "\n      <table>\n        <tr>\n        <td>"
+
+
+; @output_buffer.concat((image_tag("2.png")).to_s); @output_buffer.concat "</td>\n        <td>\n        <span class=\"usuario_diz\">"
+
+; @output_buffer.concat((User.find(message.user_id).username).to_s); @output_buffer.concat " diz:</span>\n        <div id=\"atualizacao_status\">"
+; @output_buffer.concat((message.content></div>
+        <span class="tempo_atras">a 20 minutos atrás</span>
+        </td>
+        </tr>
+      </table>
+      <hr/>
+    <% end ).to_s); @output_buffer.concat "\n  </div>\n</div>\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:57:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/var/lib/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/var/lib/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:45: syntax error, unexpected '<'
+; @output_buffer.concat((message.content></div>
+                                          ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:46: unknown regexp options - pa
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:47: syntax error, unexpected '<'
+        </td>
+         ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:48: unknown regexp options - tr
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:49: syntax error, unexpected '<'
+      </table>
+       ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:51: syntax error, unexpected '<'
+    <% end ).to_s); @output_buffer.concat "\n  </div>\n</div>\n"
+     ^
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:55: syntax error, unexpected kENSURE, expecting kEND
+/home/fabricio/ruby/voice/beckanos-rails/app/views/messages/index.html.erb:57: syntax error, unexpected $end, expecting kEND) on line #45 of app/views/messages/index.html.erb:
+42:         <td><%=image_tag("2.png")%></td>
+43:         <td>
+44:         <span class="usuario_diz"><%=User.find(message.user_id).username%> diz:</span>
+45:         <div id="atualizacao_status"><%=message.content></div>
+46:         <span class="tempo_atras">a 20 minutos atrás</span>
+47:         </td>
+48:         </tr>
+
+    app/views/messages/index.html.erb:57:in `compile!'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.3ms)
+Rendered rescues/_request_and_response (13.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:26:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+Rendering template within layouts/application
+Rendering messages/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #39 of app/views/messages/index.html.erb:
+36:     </table>
+37:     <hr/>
+38:     <br/>
+39:     <% @messages.each do |message| %>
+40:       <table>
+41:         <tr>
+42:         <td><%=image_tag("2.png")%></td>
+
+    app/views/messages/index.html.erb:39
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (175.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:26:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 21ms (View: 10, DB: 2) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:28:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:28:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (1.0ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 29ms (View: 15, DB: 3) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:36:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 20ms (View: 10, DB: 2) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:36:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 17ms (View: 7, DB: 2) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-08-25 16:36:17) [POST]
+  Parameters: {"commit"=>"Compartilhar", "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"messages", "message"=>{"content"=>"teste"}}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (23.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/messages_controller.rb:14:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-08-25 16:36:43) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed in 36ms (DB: 3) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-25 16:36:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 7, DB: 3) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-25 16:36:53) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.5ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 63ms (View: 13, DB: 9) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-25 16:36:59) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 34ms (View: 8, DB: 3) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2bc472c7516f848aec2b84f0b398a54b0a97855c97c204473a6d844447dbabb312df628e8d10ab6021a9dc8b2488edcd4b48be9041d41759a0b0f9fe958b2b13') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-25 19:37:07', '4c0f63a96cf851bc5499d484f62188a82c2e9a457abae7e4aa92f4bc6c0c2ebb0005c7b827844cb3d4428cc1dfb0ede524ad1a938420b73a948520ea0def8c95', '2010-08-25 19:37:07', 'admin', NULL, 'PhFxbR6moegPhl6ynXbB', '2bc472c7516f848aec2b84f0b398a54b0a97855c97c204473a6d844447dbabb312df628e8d10ab6021a9dc8b2488edcd4b48be9041d41759a0b0f9fe958b2b13', NULL, 'admin@admin.com', NULL)[0m
+  [4;36;1mSQL (57.9ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-25 16:37:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 8, DB: 4) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-25 16:37:15) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 6) | 302 Found [http://localhost/user_sessions]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:37:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 19ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-08-25 16:37:19) [POST]
+  Parameters: {"commit"=>"Compartilhar", "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"messages", "message"=>{"content"=>"teste"}}
+  [4;36;1mMessage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (21.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-25 19:37:19', '2010-08-25 19:37:19', 1, 'teste')[0m
+  [4;35;1mSQL (47.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/messages
+Completed in 130ms (DB: 73) | 302 Found [http://localhost/messages]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:37:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (1.2ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 50ms (View: 32, DB: 5) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:50:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 214ms (View: 201, DB: 4) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:54:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 50ms (View: 35, DB: 4) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#create (for 127.0.0.1 at 2010-08-25 16:54:34) [POST]
+  Parameters: {"commit"=>"Compartilhar", "action"=>"create", "authenticity_token"=>"SCZHZARLExw41ltvvh4LvElZSsUDA+G8FEwt5X00e/s=", "controller"=>"messages", "message"=>{"content"=>"novo teste"}}
+  [4;36;1mMessage Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-25 19:54:34', '2010-08-25 19:54:34', 1, 'novo teste')[0m
+  [4;35;1mSQL (80.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/messages
+Completed in 120ms (DB: 84) | 302 Found [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:54:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (1.4ms)[0m   [0mSELECT * FROM `messages` [0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 56ms (View: 36, DB: 6) | 200 OK [http://localhost/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:55:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMessage Load (70.0ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 142ms (View: 41, DB: 75) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-08-25 16:55:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 177ms (View: 27, DB: 5) | 200 OK [http://localhost/messages]
