@@ -9,8 +9,38 @@ Para você rodar a aplicação, execute os seguintes comandos:
   $ gem install cucumber-rails
   $ ruby script/plugin install git://github.com/dchelimsky/rspec.git -r 'refs/tags/1.2.9'
   $ ruby script/plugin install git://github.com/dchelimsky/rspec-rails.git -r 'refs/tags/1.2.9'
-  $ ruby script/generate rspec
 
 </pre>
 
 Não se esqueça de configurar a conexão com o seu banco de dados, editando o arquivo 'database.yml' na pasta config do projeto.
+
+Após configurar o banco de dados, execute as seguintes rake tasks para criar o BD e o usuário admin:
+
+<pre>
+  $ rake db:create:all
+  $ rake db:seed
+</pre>
+
+Os dados de login são: usuário - admin | senha - teste123
+
+h2. Rodando os testes
+
+Este projeto foi desenvolvido ao longo de um treinamento de XP, portanto nós escrevemos testes! ;)
+
+Para escrever os testes utilizamos o Rspec e o Cucumber. Para rodá-los execute:
+
+<pre>
+  $ rake spec
+  $ cucumber
+</pre>
+
+h2. Créditos
+
+Este projeto é baseado no "Beckanos-Java":http://github.com/rodrigoy/beckanos-java, desenvolvido pelo "Rodrigo Yoshima":http://twitter.com/rodrigoy, para o treinamento de XP da "Aspercom":http://www.aspercom.com.br.
+
+O projeto foi modificado ao longo do treinamento pelo grupo composto por:
+
+* "Bruna":http://twitter.com/brunaaco
+* "Fabrício":http://github.com/FabricioFFC
+* Glaucia
+* "Testa":http://github.com/fertesta
