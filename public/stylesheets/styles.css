@@ -18,6 +18,10 @@ a:hover {
 	color: white;
 }
 
+.opinion a:visited, a:link{
+	font-weight: bold;
+	color: black;
+}
 
 #mensagem_div {
 	margin: 10px;

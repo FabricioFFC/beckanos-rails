@@ -9,6 +9,6 @@ Funcionalidade: Exibir perfil
         Dado que eu esteja logado como "admin" com a senha "teste123"
         Quando eu vou para home
         Então eu devo ver "O que está rolando na PRW Energia?"
-        E eu devo ver "Kent Beck"
-        E eu devo ver "Casado, 52 anos"
+        E eu devo ver "Felino"
+        E eu devo ver "Casado, 12 anos"
 

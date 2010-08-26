@@ -7,10 +7,10 @@
   </div>
   
   <div id="right_div">
-	  <%=image_tag("2.png")%><br/>
-	  <span class="profile_login">@kentbeck</span><br/>
-	  Kent Beck<br/>
-	  <span class="profile_dados">Casado, 52 anos</span>
+	  <%=image_tag("2.png",:size => "120x120")%><br/>
+	  <span class="profile_login">@felino</span><br/>
+	  Felino da Silva<br/>
+	  <span class="profile_dados">Casado, 12 anos</span>
   </div>
 		
   <div id="left_div">
@@ -20,12 +20,12 @@
     Atualize seu status...<br/>
     <table>
       <tr>
-        <td><%=image_tag("2.png")%></td>
+        <td><%=image_tag("2.png",:size => "73x73")%></td>
         <td>
         <% form_for(@message) do |f| %>
           <p>
             <%= f.label :content, "Messagem" %><br />
-            <%= f.text_area (:content, :cols => 50, :rows => 2) %>
+            <%= f.text_area(:content, :cols => 50, :rows => 2) %>
           </p>
           <p>
             <%= f.submit "Compartilhar" %>
@@ -36,21 +36,26 @@
     </table>
     <hr/>
     <br/>
-    <% @messages.each do |message| %>
-      <table>
-        <tr>
-        <td><%=image_tag("2.png")%></td>
-        <td>
-        <span class="usuario_diz"><%=User.find(message.user_id).username%> diz:</span>
-        <div id="atualizacao_status"><%=message.content%></div>
-        <span class="tempo_atras"><%=time_ago_in_words(message.created_at)%></span>
-        </td>
-        </tr>
-      </table>
-      <hr/>
-    <% end %>
     <% if @messages.count == 0 %>
       Não há mensagens.
+    <% else %>
+      <% @messages.each do |message| %>
+        <table>
+          <tr>
+          <td><%=image_tag("2.png",:size => "73x73")%></td>
+          <td>
+          <span class="usuario_diz"><%=User.find(message.user_id).username%> diz:</span>
+          <div id="atualizacao_status"><%=message.content%></div>
+          <span class="tempo_atras"><%=time_ago_in_words(message.created_at)%></span>
+          <div class = "opinion">
+            <%=link_to "Concordar", opinion_path(:message=>message.id,:number=>1)%>
+            <%=link_to "Descordar", opinion_path(:message=>message.id,:number=>0)%>
+          </div>
+          </td>
+          </tr>
+        </table>
+        <hr/>
+      <% end %>
     <% end %>
   </div>
 </div>
