@@ -27,7 +27,7 @@ describe MessagesController do
   it "concordar com a mensagem" do
     @current_user = mock_model(User, :id => 1)
     controller.stub!(:current_user).and_return(@current_user)
-    post :opinion, :number => "1", :params => {:message => 1}
+    post :opinion, :number => "1", :message => "1"
     response.should include_text("Sua opinião foi salva.")
   end
 

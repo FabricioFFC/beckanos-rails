@@ -1,0 +1,36 @@
+<title>Beckanos - Comentário</title>
+<div id="content_div">
+  <div id="actions_div">
+	  <%=link_to "Home", root_url%>
+    <%=link_to "Logout", logout_path%>
+	  <a href='/busca'/>Busca</a>
+  </div>
+
+        <% form_for(@comment) do |f| %>
+          <p>
+            <%= f.label :content, "Comentário" %><br />
+            <%= f.text_area(:content, :cols => 50, :rows => 2) %>
+            <%= hidden_field(:comment, :message_id, :value =>params[:message]) %>
+          </p>
+          <p>
+            <%= f.submit "Salvar" %>
+          </p>
+        <% end %>
+   <% if @comments.count == 0 %>
+      Não há comentários.
+    <% else %>
+      <% @comments.each do |comment| %>
+        <table>
+          <tr>
+
+          <span class="usuario_diz"><%=User.find(comment.user_id).username%> comentou:</span>
+          <div id="atualizacao_status"><%=comment.content%></div>
+          <span class="tempo_atras"><%=time_ago_in_words(comment.created_at)%></span>
+          </td>
+          </tr>
+        </table>
+        <hr/>
+      <% end %>
+    <% end %>       
+        
+

@@ -11343,3 +11343,1350 @@ Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 12:00:10) [POST
 Redirected to http://test.host/messages
 Completed in 1ms (DB: 42) | 302 Found [http://test.host/opinion/1?message=1]
   [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100824050856)
+Migrating to CreateMessages (20100825133403)
+Migrating to CreateUserSessions (20100825143403)
+Migrating to CreateOpinions (20100825171403)
+Migrating to CreateComments (20100826181031)
+  [4;36;1mSQL (196.0ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `message_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (87.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100826181031')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `opinions`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `opinions`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `user_sessions`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `user_sessions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `user_sessions`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '059525d065381ce96b37908528355264abf9edde638d057a7f09856be2857a2f9ec104bc789f449405d4e6a39c5334660049b77ebe4412248e37341ff9d21454') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:25:53', '76053ffeeaefbbe4b80019c77d602f6d79cf490eb8ef3dd9ff3b243da4a167b8f6bee4c80a114a05df981c9b7a34a15d536c83d4054688355b93350167e35044', '2010-08-26 19:25:53', 'admin', NULL, 'hMaGcsuTqdyMzfW6oIn', '059525d065381ce96b37908528355264abf9edde638d057a7f09856be2857a2f9ec104bc789f449405d4e6a39c5334660049b77ebe4412248e37341ff9d21454', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (89.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.6ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:53', '2010-08-26 19:25:53', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (1.0ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (50.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:53', '2010-08-26 19:25:53', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (2.2ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.4ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.8ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:53', '2010-08-26 19:25:53', 1, 2, 2)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (44.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 'teste')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.0ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.8ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.6ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 2, 3)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (2.3ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 3, 3)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (47.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3eec04d9d22ee6a150180fce2ee93357cce87bea174f3e850d6505dd4880b40fd9d30ef387d5cddb4772e6ec6ac16a1fff8f1f14ce75a09cdacd7e124c8cab87') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:25:54', 'c0c11bb2b0d273f34b3b35f96afc11633efd8fabdab78067ad8fb28122c7bc1a5656a2ce111c06ba199b0ebaffb718c559f9319b060f56bfc0f6826e197d92db', '2010-08-26 19:25:54', 'joao', NULL, '12lM3KZI2ON78meTOpY2', '3eec04d9d22ee6a150180fce2ee93357cce87bea174f3e850d6505dd4880b40fd9d30ef387d5cddb4772e6ec6ac16a1fff8f1f14ce75a09cdacd7e124c8cab87', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 2, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (47.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'aaf28fcade6625fc61661cac625d48bc4096169dbdd528344c79ae013da792911b5506e483082e2f4b15c6119669add93ccfbfe02c7a4b2c6551a88423d2ab96') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '3eec04d9d22ee6a150180fce2ee93357cce87bea174f3e850d6505dd4880b40fd9d30ef387d5cddb4772e6ec6ac16a1fff8f1f14ce75a09cdacd7e124c8cab87') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '3eec04d9d22ee6a150180fce2ee93357cce87bea174f3e850d6505dd4880b40fd9d30ef387d5cddb4772e6ec6ac16a1fff8f1f14ce75a09cdacd7e124c8cab87') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:25:54', '091788f47d9db199191c98f6f8e01b4b003fb8196301eb0ef5179cb7be237f069f9650bc409163b2fa124db75565f241d758e538ba07225a35cc459a44f486a8', '2010-08-26 19:25:54', 'joao', NULL, 'qjJf4pu2AfdFozvzk16', 'aaf28fcade6625fc61661cac625d48bc4096169dbdd528344c79ae013da792911b5506e483082e2f4b15c6119669add93ccfbfe02c7a4b2c6551a88423d2ab96', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.0ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (63.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (9.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '72a74ae6cdfa38a91a664d09658efff5ca2f586f2c78b5679f378fac0ae0a77ac00c1a96767956296ee1437e2f90eaa5f8584da221e9b73d8a1829be26d19dd8') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'aaf28fcade6625fc61661cac625d48bc4096169dbdd528344c79ae013da792911b5506e483082e2f4b15c6119669add93ccfbfe02c7a4b2c6551a88423d2ab96') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'aaf28fcade6625fc61661cac625d48bc4096169dbdd528344c79ae013da792911b5506e483082e2f4b15c6119669add93ccfbfe02c7a4b2c6551a88423d2ab96') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:25:54', 'ea4d92c48c0d736c652b17cc37a15fe1229e12971ae53169c698987a1a36c1bd43aa01f1765008be455d1f6cb093eb41ef2da02b1c76fdea578cfd9ae23ba1bb', '2010-08-26 19:25:54', 'joao', NULL, 'RGHFsEcq5LlQrjGmJ1Ka', '72a74ae6cdfa38a91a664d09658efff5ca2f586f2c78b5679f378fac0ae0a77ac00c1a96767956296ee1437e2f90eaa5f8584da221e9b73d8a1829be26d19dd8', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 4, 'teste')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.3ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.2ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 2, 6)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.8ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.6ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 3, 6)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (40.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 'teste')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.3ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.0ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 2, 7)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (1.0ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (48.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (53.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:25:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 21ms (View: 10, DB: 562) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '86356e09c760612ba354fcf50a6dffa0d485b99b9949960768af09746982a57774d0710ef761bbea4d6dee2bd8247eb7b73bb131771f79d3e118c601c33316e8') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:25:54', 'd9bdf78ad44dac05b839e489be4e70fd7a5939a23adb590cb72bf4b8f92fb394f412d57a6fb7fd200b84461f55155367adec0685ca7241b671a800621471c183', '2010-08-26 19:25:54', 'joao', NULL, '7dkWlyaVy3CKwXPy01U', '86356e09c760612ba354fcf50a6dffa0d485b99b9949960768af09746982a57774d0710ef761bbea4d6dee2bd8247eb7b73bb131771f79d3e118c601c33316e8', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:25:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 14ms (View: 12, DB: 5) | 200 OK [http://test.host/]
+  [4;35;1mSQL (50.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:25:54) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:25:54', '2010-08-26 19:25:54', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 51) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (46.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:25:54) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "params"=>{"message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 1' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (136.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (209.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100824050856)
+  [4;36;1mSQL (174.8ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `age` int(11), `civil` varchar(1), `gender` varchar(1), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (53.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100824050856')[0m
+Migrating to CreateMessages (20100825133403)
+  [4;36;1mSQL (126.6ms)[0m   [0;1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (53.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100825133403')[0m
+Migrating to CreateUserSessions (20100825143403)
+  [4;36;1mSQL (160.7ms)[0m   [0;1mCREATE TABLE `user_sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (53.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100825143403')[0m
+Migrating to CreateOpinions (20100825171403)
+  [4;36;1mSQL (202.6ms)[0m   [0;1mCREATE TABLE `opinions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `opinion` tinyint(1), `message_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (53.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100825171403')[0m
+Migrating to CreateComments (20100826181031)
+  [4;36;1mSQL (164.9ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `message_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (42.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100826181031')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `opinions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `opinions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `user_sessions`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `user_sessions`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `user_sessions`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '6ebfee6947837ccc4258c1065e84895da83403e40946bb4b30532ab8340d01b4eed129fe991a5d6a95b08adaf566977f7786d96d8f6dc0714902d00d53c05228') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:27:27', '22923fbd0db808f7c01c658ad5210ef8c5779de7568a8fb3934bb0413e53285dd0e889efc8b8d42a21410fe0b938496a9325700d395034cd963d3f7c3a35d475', '2010-08-26 19:27:27', 'admin', NULL, 'fLP47vn3XOhQkQqxo9hp', '6ebfee6947837ccc4258c1065e84895da83403e40946bb4b30532ab8340d01b4eed129fe991a5d6a95b08adaf566977f7786d96d8f6dc0714902d00d53c05228', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (37.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.8ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:27', '2010-08-26 19:27:27', 1, 'teste')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (1.7ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:27', '2010-08-26 19:27:27', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 2, 2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (36.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.6ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 2, 3)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.6ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 3, 3)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.7ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (39.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd48f6c19fc6c4bb200072abb1273343de37a204ff7df3c82cad44166e50f8bdd392bcc730e3689568d9a432502b28bb6d6183f18d33bc8c6e461d9af5db27073') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:27:28', '977244e8a5113200c7523486a714c582cb3df31a5e1972cdc9f09896df31586c3c9f3c7d8a040e426f8b6a01446c42ae439135a05b1a0cd2032fff1463d7baf7', '2010-08-26 19:27:28', 'joao', NULL, 'IJmkloGN7m1ibUdndd8', 'd48f6c19fc6c4bb200072abb1273343de37a204ff7df3c82cad44166e50f8bdd392bcc730e3689568d9a432502b28bb6d6183f18d33bc8c6e461d9af5db27073', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 2, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (41.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '07b2ae69218023eac839cd3b3015cd2c11be57cb9a1e9a4a9735ebd878bc5f5039f3e6fd5835e69a900db55826b41d3aa37bd19176575e9698ef9fb692a25627') LIMIT 1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'd48f6c19fc6c4bb200072abb1273343de37a204ff7df3c82cad44166e50f8bdd392bcc730e3689568d9a432502b28bb6d6183f18d33bc8c6e461d9af5db27073') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'd48f6c19fc6c4bb200072abb1273343de37a204ff7df3c82cad44166e50f8bdd392bcc730e3689568d9a432502b28bb6d6183f18d33bc8c6e461d9af5db27073') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:27:28', 'dcdd39270e86a46928a2e1ce5eed35154569be15fa1b61c20e96cb83b4ee33f818cc8991673e5a417ce624e9f3836f9ef9e1f5116207f6145bafd2c023ea68f1', '2010-08-26 19:27:28', 'joao', NULL, 'FtSJM9zT9DBkQc6wlek9', '07b2ae69218023eac839cd3b3015cd2c11be57cb9a1e9a4a9735ebd878bc5f5039f3e6fd5835e69a900db55826b41d3aa37bd19176575e9698ef9fb692a25627', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 2, 5)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (48.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2d10377365e4c5db164406feeb8b2fb5a46b8abeef08b6de0332bd34e123ff743393454e0fc17b033d860c644bf124e496d598715f08b4611bb3e9663d852279') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '07b2ae69218023eac839cd3b3015cd2c11be57cb9a1e9a4a9735ebd878bc5f5039f3e6fd5835e69a900db55826b41d3aa37bd19176575e9698ef9fb692a25627') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '07b2ae69218023eac839cd3b3015cd2c11be57cb9a1e9a4a9735ebd878bc5f5039f3e6fd5835e69a900db55826b41d3aa37bd19176575e9698ef9fb692a25627') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:27:28', 'a575865a2c59d777144ab1ff4c420540191ec7217bf8725bc11fe0978340bb60610c9261d59828ed66089ae837e850efbaed526c609f943fb6dbf3f51d89f642', '2010-08-26 19:27:28', 'joao', NULL, 'GvKhrq8JqCPejGhqntku', '2d10377365e4c5db164406feeb8b2fb5a46b8abeef08b6de0332bd34e123ff743393454e0fc17b033d860c644bf124e496d598715f08b4611bb3e9663d852279', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 4, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 2, 6)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.7ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 3, 6)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (56.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 'teste')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.9ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.8ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 2, 7)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (1.2ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (44.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (38.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:27:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (0.9ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 18ms (View: 11, DB: 450) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '6427094c6217f438a4ec25354a9f08924acf0955414bfb9d9ef458f038e576a751e581191dfdf6b7a18675fc2aa738003ac8a52bc0a6da98d596644499f1ccf6') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:27:28', 'e2eceb36e2553128c63696865d220e6c2e619988205684127851beed448a315c19238f3730297a8ca7636a3a4e28ef33f642a6bc5b925af5b5a888cfd82dcac4', '2010-08-26 19:27:28', 'joao', NULL, 'X0XCdHe0xsWIMozFmN', '6427094c6217f438a4ec25354a9f08924acf0955414bfb9d9ef458f038e576a751e581191dfdf6b7a18675fc2aa738003ac8a52bc0a6da98d596644499f1ccf6', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:27:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 14ms (View: 11, DB: 5) | 200 OK [http://test.host/]
+  [4;35;1mSQL (39.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:27:28) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:27:28', '2010-08-26 19:27:28', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 40) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (43.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:27:28) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "params"=>{"message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 1' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '4e3c3aef3db4ff51a805629d106396cf57703c7b26fe18fc632f6c355106b5503e7b9c35bbe9815caa8e8500713571acba543b3e6db6aab175cfa588059be232') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:08', 'd52d36697461b5b5945773d093088877d196e7df4f7fa79d7cf56bc90e69013f02fa0a10b72f957b095b90776ddac3f1e195a4b15b149b0f10082a5bef1382f8', '2010-08-26 19:33:08', 'admin', NULL, 'yRyqAac5SGyj9NhKFTeO', '4e3c3aef3db4ff51a805629d106396cf57703c7b26fe18fc632f6c355106b5503e7b9c35bbe9815caa8e8500713571acba543b3e6db6aab175cfa588059be232', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (71.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.7ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (1.0ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (64.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 'teste')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 2, 2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (68.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 2, 3)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.4ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 3, 3)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.2ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (38.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7d1d4e6e20eb44ac55ebef2fd1eeacdaa195050e36b594cae70fbfc5702dd9861e3f1d69dc008802dce3a0d9ec31a8c2b71896288edc8bb23644eefd22da18f3') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:08', '0bc2da522ca2cf326c4c702c86f16d8161602ffe6fe9f547f2d6e94411ebac1ad1c747697fc07cbe11a550a8478dccf8446e0a0ac974f00a6b40f9e6c1d8a704', '2010-08-26 19:33:08', 'joao', NULL, 'f6eZIYvyoCDOVEP8Zt6C', '7d1d4e6e20eb44ac55ebef2fd1eeacdaa195050e36b594cae70fbfc5702dd9861e3f1d69dc008802dce3a0d9ec31a8c2b71896288edc8bb23644eefd22da18f3', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 2, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (47.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3ea4db1a5bb123ba2a8806ca818ffe8c4583c4f9f6e80456990643efe5a5f5966d4ff6c7856a47ee5cf9cf66d55cd00cfaeeb439e38dc481c540769009c336f2') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7d1d4e6e20eb44ac55ebef2fd1eeacdaa195050e36b594cae70fbfc5702dd9861e3f1d69dc008802dce3a0d9ec31a8c2b71896288edc8bb23644eefd22da18f3') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7d1d4e6e20eb44ac55ebef2fd1eeacdaa195050e36b594cae70fbfc5702dd9861e3f1d69dc008802dce3a0d9ec31a8c2b71896288edc8bb23644eefd22da18f3') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:08', '54ada11bab794c645c58e9d4782e057ef1911b8bdd80b9ccaac443fa5a7428cefb73c75fa3b83753984cb86936da86989989241b85adbb6f5367acf4a7133191', '2010-08-26 19:33:08', 'joao', NULL, '4dvsd1hZxYGkjTPiwjA8', '3ea4db1a5bb123ba2a8806ca818ffe8c4583c4f9f6e80456990643efe5a5f5966d4ff6c7856a47ee5cf9cf66d55cd00cfaeeb439e38dc481c540769009c336f2', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (41.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ffd806b0bc153ab64235a0dbcc48f07f82b3674ed7de5a0625b3229f665954ad38c8ca91db08ed1d471acf6053e7226e72c7acf85c2921a5cb38be3a5bd999e2') LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '3ea4db1a5bb123ba2a8806ca818ffe8c4583c4f9f6e80456990643efe5a5f5966d4ff6c7856a47ee5cf9cf66d55cd00cfaeeb439e38dc481c540769009c336f2') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '3ea4db1a5bb123ba2a8806ca818ffe8c4583c4f9f6e80456990643efe5a5f5966d4ff6c7856a47ee5cf9cf66d55cd00cfaeeb439e38dc481c540769009c336f2') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:08', '74b17378a9fb68aa040b41caec4e43571c34463407e88bfc6c55008abac2f703fdb589372069691b62d6d9916ab32336e7d8c6a116a5845376f3dcaa9e5bd6f8', '2010-08-26 19:33:08', 'joao', NULL, 'ltMJFgmmimGsy5vOmxIU', 'ffd806b0bc153ab64235a0dbcc48f07f82b3674ed7de5a0625b3229f665954ad38c8ca91db08ed1d471acf6053e7226e72c7acf85c2921a5cb38be3a5bd999e2', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.7ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 4, 'teste')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.9ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.3ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 2, 6)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.8ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.8ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:08', '2010-08-26 19:33:08', 1, 3, 6)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:09', '2010-08-26 19:33:09', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.3ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.3ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:09', '2010-08-26 19:33:09', 1, 2, 7)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (1.1ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (48.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:09', '2010-08-26 19:33:09', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (43.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:33:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (2.3ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 26ms (View: 14, DB: 534) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'fb378cc7466c6a702916657de2051e229c2e2cb257d53543ce865fc619779908a7e5d4613ea95f6981a40451985c61f4e26ae60cade7d613004440f1dbfe77cf') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:09', 'b6018409f5c586b038d91e2972da71873e68821e36347fc26b05f7f50916f27b401138b41e0c0686808d0ae381f44a9eaefaceced10f3d199bdd077d4d5f1d69', '2010-08-26 19:33:09', 'joao', NULL, 'Vtc9M0lmp9nRA5l1n4V', 'fb378cc7466c6a702916657de2051e229c2e2cb257d53543ce865fc619779908a7e5d4613ea95f6981a40451985c61f4e26ae60cade7d613004440f1dbfe77cf', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:09', '2010-08-26 19:33:09', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:33:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.9ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 15ms (View: 12, DB: 6) | 200 OK [http://test.host/]
+  [4;35;1mSQL (40.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:33:09) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:09', '2010-08-26 19:33:09', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 41) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (39.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:33:09) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "params"=>{"message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 1' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'fd7a3f1b363ff9d56ed0be1aca01a00101a29861c81fa64134af3f8791c26102ce8f6b8f4660184579f5092f4b28b54ef225c78ae05f4d96a6937a98cd358ed5') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:32', 'd197484ed4e3de2c9541ac8e1f7383695d519f3af509e12839113c14bc1ce596d018f447238bb49f7b91f0023b393860253558225b5fbcfa6cf51dbe5445704d', '2010-08-26 19:33:32', 'admin', NULL, 'Cvd8yU0JUIOvxea0HjL3', 'fd7a3f1b363ff9d56ed0be1aca01a00101a29861c81fa64134af3f8791c26102ce8f6b8f4660184579f5092f4b28b54ef225c78ae05f4d96a6937a98cd358ed5', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (42.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (1.2ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (40.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.3ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.2ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.9ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 2, 2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.8ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 'teste')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.7ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.8ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 2, 3)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.8ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.6ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:32', '2010-08-26 19:33:32', 1, 3, 3)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.7ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (41.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7137052df4e93e06d00278adad186d47c120aeed96ad54ae6c17380d43840bb5032fb291c597a1187b49e8f4084cd7a4c6a27a19ddef7fa544ba903482c7a624') LIMIT 1[0m
+  [4;35;1mUser Create (1.0ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:33', '7d3728665735ead0c257c42875baa97ca3f29b34505cd6ce01dcb271dedb28efb40373a996f3d9173420bd9742fbcf2e0f9c8f6d7f3595a211f6bc8f23915658', '2010-08-26 19:33:33', 'joao', NULL, 'xxF3UzRDHJk1WHFJ269F', '7137052df4e93e06d00278adad186d47c120aeed96ad54ae6c17380d43840bb5032fb291c597a1187b49e8f4084cd7a4c6a27a19ddef7fa544ba903482c7a624', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 2, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (41.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '64009effc00d4c821de6235d60d91afdec59ccc76d0924fd29db821488b3e7253a32f47ebea7ca32bf99742796bbba5d47be03c8ef3b48a6c8f01f632a61e0f0') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7137052df4e93e06d00278adad186d47c120aeed96ad54ae6c17380d43840bb5032fb291c597a1187b49e8f4084cd7a4c6a27a19ddef7fa544ba903482c7a624') LIMIT 1[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7137052df4e93e06d00278adad186d47c120aeed96ad54ae6c17380d43840bb5032fb291c597a1187b49e8f4084cd7a4c6a27a19ddef7fa544ba903482c7a624') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:33', '65b3abeb1098d79e80ae451b73acc087a8e1db11decea37dc23c082fb8ef298de99f79906e7893ae5fc6a604bb2224380f287c14e68895e8e93d6475fa227ad6', '2010-08-26 19:33:33', 'joao', NULL, '1xhMAfyhCFg21F5eBes', '64009effc00d4c821de6235d60d91afdec59ccc76d0924fd29db821488b3e7253a32f47ebea7ca32bf99742796bbba5d47be03c8ef3b48a6c8f01f632a61e0f0', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 3, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.8ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (42.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd27ce59265636a02be8f079039fc5ab6275ce4b6994d55b8b8437e344fb6392c29ce0ce3fe85cd6fc796682d173589d77658763162b2fcfe727b553329e3f3c1') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '64009effc00d4c821de6235d60d91afdec59ccc76d0924fd29db821488b3e7253a32f47ebea7ca32bf99742796bbba5d47be03c8ef3b48a6c8f01f632a61e0f0') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '64009effc00d4c821de6235d60d91afdec59ccc76d0924fd29db821488b3e7253a32f47ebea7ca32bf99742796bbba5d47be03c8ef3b48a6c8f01f632a61e0f0') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:33', '2cb93cfceb782d3335d89ba90a3e618ac337978a4ecafccc13c08702f02ba551e2b1fb8f0667b09acd4482f6da1ac01dd6e70dd2986ffb97582fa95cc0aba5e9', '2010-08-26 19:33:33', 'joao', NULL, '4clAGZfuBizemHh3we', 'd27ce59265636a02be8f079039fc5ab6275ce4b6994d55b8b8437e344fb6392c29ce0ce3fe85cd6fc796682d173589d77658763162b2fcfe727b553329e3f3c1', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 4, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.7ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 2, 6)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 3, 6)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (40.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 'teste')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.1ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 2, 7)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (48.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:33:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 18ms (View: 11, DB: 454) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ecaf272a885ab1c4e746ff234c83a5b021269e6e86d98b69e8064f1f9882129571eb4cccebf4cd8f9adeb18a8856a37a2e68ef989a6d2bca30b595d80ed8b7dc') LIMIT 1[0m
+  [4;35;1mUser Create (0.8ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:33:33', '5cc8f5a04c38e2597808efa6c4a6e799a4aa2ab83d6cd1b7907fe2e553440608a22408f0d9dc7a432f4f217c0e57df209d8e46b43c3bf04d4c521ebc0d8568eb', '2010-08-26 19:33:33', 'joao', NULL, 'r879hviLQYUxTJkvXf', 'ecaf272a885ab1c4e746ff234c83a5b021269e6e86d98b69e8064f1f9882129571eb4cccebf4cd8f9adeb18a8856a37a2e68ef989a6d2bca30b595d80ed8b7dc', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:33:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 14ms (View: 11, DB: 5) | 200 OK [http://test.host/]
+  [4;35;1mSQL (36.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:33:33) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.6ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:33:33', '2010-08-26 19:33:33', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 37) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (37.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:33:33) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "params"=>{"message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 1' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '307beabc941decb85f28f93f248c3e3317203da22f8c24f6ae805db2c9fc5726cb4bc7002305b3b6b4d441bea3f3b0e292def90d41510cbbb22066ac1a271aad') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:34:04', '3e6b1b3d3d5e7355536586da04e74bd9c85becb543d2fbc1c519cb8ca2df4c28c12622f2789e35b6ff58a8e422d24e577a5165362dadeca14715fc2893d92731', '2010-08-26 19:34:04', 'admin', NULL, '3sGySyZd1zgJsiNsi4i', '307beabc941decb85f28f93f248c3e3317203da22f8c24f6ae805db2c9fc5726cb4bc7002305b3b6b4d441bea3f3b0e292def90d41510cbbb22066ac1a271aad', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (87.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.8ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.9ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 2, 2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (43.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.3ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.8ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 2, 3)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.9ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (1.0ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.6ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 1, 3, 3)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.6ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (42.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a4fdf61a21eba5b452f5f479f978103aa80dc0d4102540e36fa7b8243db81548dbb1d49f5ecd4b475698fb51c46dfe917c2aa090102d51b77cd2c25d163d2e84') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:34:04', 'ff8cd802d3f7bf0fff4c23df6b5eec58068916c206a1d178ba392447d7bd94ec9660e02faa09e9449b2eef746854a42d45b89ab04858d63f1074611127b166ea', '2010-08-26 19:34:04', 'joao', NULL, 'SmvN20GOZnubVjiNVVBw', 'a4fdf61a21eba5b452f5f479f978103aa80dc0d4102540e36fa7b8243db81548dbb1d49f5ecd4b475698fb51c46dfe917c2aa090102d51b77cd2c25d163d2e84', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:04', '2010-08-26 19:34:04', 2, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (43.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'dbcc9a6dad8198a147de7e464ac086262d8709586cd5dc42e3e2476fb702dbddecacfa1f10f2e5945a0f81a52861a2ae5c0f9bed942ab9059b6f25e26357085c') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a4fdf61a21eba5b452f5f479f978103aa80dc0d4102540e36fa7b8243db81548dbb1d49f5ecd4b475698fb51c46dfe917c2aa090102d51b77cd2c25d163d2e84') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a4fdf61a21eba5b452f5f479f978103aa80dc0d4102540e36fa7b8243db81548dbb1d49f5ecd4b475698fb51c46dfe917c2aa090102d51b77cd2c25d163d2e84') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:34:05', '4089520e2511a83fe8e28b897689fc3d7b939d8e35dbf3ff6ad718957a6995edb2471b03e34d8e851f7ee0d4897aa990f9a4cc4d93192504ca107405d51e4ff2', '2010-08-26 19:34:05', 'joao', NULL, 'C2SsfGGIOOX2VheqL0yg', 'dbcc9a6dad8198a147de7e464ac086262d8709586cd5dc42e3e2476fb702dbddecacfa1f10f2e5945a0f81a52861a2ae5c0f9bed942ab9059b6f25e26357085c', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (1.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (43.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'e082d69773bbf6eeac1b4e2c0706d0dd9b0a515600e9ddc340570fcdd30a368cae871e3e4b3eddcf5cfe27c01affab62974ebb5abbc241a69fab853503628106') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dbcc9a6dad8198a147de7e464ac086262d8709586cd5dc42e3e2476fb702dbddecacfa1f10f2e5945a0f81a52861a2ae5c0f9bed942ab9059b6f25e26357085c') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dbcc9a6dad8198a147de7e464ac086262d8709586cd5dc42e3e2476fb702dbddecacfa1f10f2e5945a0f81a52861a2ae5c0f9bed942ab9059b6f25e26357085c') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:34:05', '99f513f60ad9f3dca2ca2d6ebcd9e7f2b962d6a1c6dc789dcf3ae55956c550c0213314356d00b5735d83fd73b8ab0480162de194c212be31385aa3d68d6875f5', '2010-08-26 19:34:05', 'joao', NULL, 'Z7N1csub7tePmk9SUdkZ', 'e082d69773bbf6eeac1b4e2c0706d0dd9b0a515600e9ddc340570fcdd30a368cae871e3e4b3eddcf5cfe27c01affab62974ebb5abbc241a69fab853503628106', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.5ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 4, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 2, 6)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 3, 6)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 2, 7)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (43.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.9ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (5.5ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (39.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:34:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 16ms (View: 10, DB: 501) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c421f5d886775d58850ba1a8a89f757ec673d11100e65aedde395a95837db7a58e358f0af1de57526589b5e03f2ae0dbf553dfbb993a7c868e4e4a6f636603c7') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:34:05', '6e870c355d8d1348c703e435aea1752d2c3ab0eca2bc6545984ef302d2c04e5b150b90ba30d70cc3fcabdfed2de7ffbb5282e0686d3e368eec638794420ef439', '2010-08-26 19:34:05', 'joao', NULL, 'QqiOWj67QFcfnohlMjwa', 'c421f5d886775d58850ba1a8a89f757ec673d11100e65aedde395a95837db7a58e358f0af1de57526589b5e03f2ae0dbf553dfbb993a7c868e4e4a6f636603c7', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:34:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.9ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 14ms (View: 11, DB: 6) | 200 OK [http://test.host/]
+  [4;35;1mSQL (42.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:34:05) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.6ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:34:05', '2010-08-26 19:34:05', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 44) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (41.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:34:05) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "params"=>{"message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 2' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '63ea337feff60176cfbb4c19035deab5eced4e18730b376a8b83113b73ac2ef34999c9d9c6817c83f0ac591145c529f96b5ce43e9a1eb8c4e27b58a78db359d2') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:36:11', 'f4a0e11e3601761c38fcd417c542b69f918aac2ebb4c6f253133cf8d5ec671b7b813bb44030c0af0982960c90465236f2041b338f74abc0c03f5517bafae0761', '2010-08-26 19:36:11', 'admin', NULL, 'pfwzZGLRSiFCnUDMoGVh', '63ea337feff60176cfbb4c19035deab5eced4e18730b376a8b83113b73ac2ef34999c9d9c6817c83f0ac591145c529f96b5ce43e9a1eb8c4e27b58a78db359d2', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (75.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.5ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.9ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (59.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.0ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 2, 2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (58.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (1.0ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.9ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.7ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 2, 3)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.8ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.6ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 3, 3)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.6ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (56.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2cde74712182ab156c5146d217f9760bfb0a98df4ca1c0a68c4eea7f8ed3ac638561a8db1e3980530c9382f6827198147c05b4ea289c456508d40780323767fb') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:36:12', 'e7123382a1d175a405738d8260427ac43213e5d2a33e578acefbab9189bf1d78b17d0a4451a06e4766ac17db0fd0f363236669a052806beb424335e63d139222', '2010-08-26 19:36:12', 'joao', NULL, 'yhUMmbawWTDJpaUQl1e', '2cde74712182ab156c5146d217f9760bfb0a98df4ca1c0a68c4eea7f8ed3ac638561a8db1e3980530c9382f6827198147c05b4ea289c456508d40780323767fb', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.5ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 2, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (57.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c65d4eef4d1cbfe5208621b725cfab637bfcf9f6d398f17b264992536eca5ca96b43e41b90ff683ae6515cef09617bf28a608b275eab22ef6f1082fd0d79fc40') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2cde74712182ab156c5146d217f9760bfb0a98df4ca1c0a68c4eea7f8ed3ac638561a8db1e3980530c9382f6827198147c05b4ea289c456508d40780323767fb') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2cde74712182ab156c5146d217f9760bfb0a98df4ca1c0a68c4eea7f8ed3ac638561a8db1e3980530c9382f6827198147c05b4ea289c456508d40780323767fb') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:36:12', 'db38e987e94d25295faa0ab73c40fe7c77ef19701e5e76a1f4c6381acf35d40eda26a21871c05191c2c2a7b56759eef773853a6b400637ff0d069b92f100c3be', '2010-08-26 19:36:12', 'joao', NULL, 'RZ3np7cYlTkKKsGMQW', 'c65d4eef4d1cbfe5208621b725cfab637bfcf9f6d398f17b264992536eca5ca96b43e41b90ff683ae6515cef09617bf28a608b275eab22ef6f1082fd0d79fc40', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.7ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (45.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '39a44aa4a07accfbb4e98e58417b0e4e0aace31355e5518b9ab73ede60cb0a5ecf63bbae7a47cb8067247a6e456c48334ec6cd87b2fb4c5e1cdf84cf30b441ae') LIMIT 1[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'c65d4eef4d1cbfe5208621b725cfab637bfcf9f6d398f17b264992536eca5ca96b43e41b90ff683ae6515cef09617bf28a608b275eab22ef6f1082fd0d79fc40') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'c65d4eef4d1cbfe5208621b725cfab637bfcf9f6d398f17b264992536eca5ca96b43e41b90ff683ae6515cef09617bf28a608b275eab22ef6f1082fd0d79fc40') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:36:12', '2a46426ddc88671663f5e0694433acf9ad0417c8b2e19479ad882af0b526a1d8d26f07dfa8452ee2a218acf3348ae636dddd21426b73982fb610089d87b29a00', '2010-08-26 19:36:12', 'joao', NULL, 'mEbH0nhSMIW1FmUuHmr', '39a44aa4a07accfbb4e98e58417b0e4e0aace31355e5518b9ab73ede60cb0a5ecf63bbae7a47cb8067247a6e456c48334ec6cd87b2fb4c5e1cdf84cf30b441ae', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 4, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.4ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 2, 6)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.4ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 3, 6)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (40.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 2, 7)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.6ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (42.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (42.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:36:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (2.3ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 25ms (View: 12, DB: 545) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd8681e1440c4c84b78f59d6ebdf4c27ab56a68dfd6d16356eb4cb7ddde6a1ccc752e8ced1dd94ed137d1305af044d4bfce4631a0cc7bbbff933161324104f6de') LIMIT 1[0m
+  [4;35;1mUser Create (0.8ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:36:12', 'f1e4acc4f4b2b0077fe57fbb52957e757b9e7fbbc4463da5866b90a2bd68bea29177bc0583ac473c59ef89aa38f9e09aa7729bcb728a4803c2d4527a2920e224', '2010-08-26 19:36:12', 'joao', NULL, 'FMy1jqhcEzF6m2g9FMl', 'd8681e1440c4c84b78f59d6ebdf4c27ab56a68dfd6d16356eb4cb7ddde6a1ccc752e8ced1dd94ed137d1305af044d4bfce4631a0cc7bbbff933161324104f6de', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:12', '2010-08-26 19:36:12', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:36:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 14ms (View: 11, DB: 6) | 200 OK [http://test.host/]
+  [4;35;1mSQL (29.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:36:13) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.6ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:36:13', '2010-08-26 19:36:13', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 31) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (28.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:36:13) [POST]
+  Parameters: {"action"=>"opinion", "params"=>{"number"=>"1", "message"=>1}, "controller"=>"messages"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and o.user_id = 1' at line 1: select count(*) as count from opinions o where o.message_id = and o.user_id = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'admin@admin.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '352593aee8f718936e12d60eb9589c16242277d2aa03203b5d1d389da11291d7a5d2295f58dcf898b855ae7ff1862767d8a54ae752922cadf0b5e5f492217ec7') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:37:03', '9e667d210acd56fb8183f35a511d9c8a3402285eedda2d70e5444ea9d74f5b546cf6be1d61a11d5b384aebfb2b591f44a6074855818ffbd71d7a34c7f4512be5', '2010-08-26 19:37:03', 'admin', NULL, 'e66nXVVzmgHfx5rt9', '352593aee8f718936e12d60eb9589c16242277d2aa03203b5d1d389da11291d7a5d2295f58dcf898b855ae7ff1862767d8a54ae752922cadf0b5e5f492217ec7', NULL, 'admin@admin.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.username) = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMessage Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.4ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;35;1mOpinion Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `opinions`[0m
+  [4;36;1mSQL (51.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.8ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.7ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 2 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (2.1ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 2, 2)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as importance from opinions where message_id = 2[0m
+  [4;36;1mSQL (58.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.5ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 2, 3)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 3 and o.user_id = 3[0m
+  [4;35;1mOpinion Create (0.5ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 3, 3)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mOpinion Load (0.4ms)[0m   [0;1mselect count(*) as importance from opinions where message_id = 3[0m
+  [4;35;1mSQL (53.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '9c127eddff281c8255bbad8435b52b158056ba28bc37a5296a3b0ccb7e1036300432b86e1185dfc715533be11f8055cee1dd418c87b479bdf97d34258db4afb2') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:37:03', 'fb247ab7a3d7a28989b2f5c1dea742b7e44da897ad0c93dfea36f5c89db805bb43e3a662333fe7db6d546cbd181536f99bd21088f62e6e61ff3ea7a8b209717e', '2010-08-26 19:37:03', 'joao', NULL, 'u69Wo8AwzWSuPB3WVJPQ', '9c127eddff281c8255bbad8435b52b158056ba28bc37a5296a3b0ccb7e1036300432b86e1185dfc715533be11f8055cee1dd418c87b479bdf97d34258db4afb2', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 2, 'teste')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mselect count(*) as importance from messages m, opinions o where m.user_id = 2 and m.id = o.message_id[0m
+  [4;35;1mSQL (45.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f5779a46c462a73d0ec0a5136496514d44d3aaab6616ed6390b80e48ab201aae5ffc4fbaf4a37699bef367e346a97f606c417b260a448cb04f339152195ec922') LIMIT 1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9c127eddff281c8255bbad8435b52b158056ba28bc37a5296a3b0ccb7e1036300432b86e1185dfc715533be11f8055cee1dd418c87b479bdf97d34258db4afb2') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9c127eddff281c8255bbad8435b52b158056ba28bc37a5296a3b0ccb7e1036300432b86e1185dfc715533be11f8055cee1dd418c87b479bdf97d34258db4afb2') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:37:03', 'e477d6153f4a70756cfa14f4ec47b7f45937d3e463bf8ed7fdaf4b50d0c7d23ecc6ddebeaede2d6a20c3da76060f75fd6ad36f888280f0962829e6f71a6fc095', '2010-08-26 19:37:03', 'joao', NULL, 'NYIYKyqnacutis6Ng1X', 'f5779a46c462a73d0ec0a5136496514d44d3aaab6616ed6390b80e48ab201aae5ffc4fbaf4a37699bef367e346a97f606c417b260a448cb04f339152195ec922', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 3, 'teste')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 5 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (0.4ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:03', '2010-08-26 19:37:03', 1, 2, 5)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 3 and m.id = o.message_id[0m
+  [4;36;1mSQL (46.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '4d4ebd1ddd52cfde4709e6837e87d4a0ecd01643639d86fbd1c4ba7826993a98710bb0f67234cd9688a7e3d0173b92807b078cb13734829d93940105263084eb') LIMIT 1[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f5779a46c462a73d0ec0a5136496514d44d3aaab6616ed6390b80e48ab201aae5ffc4fbaf4a37699bef367e346a97f606c417b260a448cb04f339152195ec922') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f5779a46c462a73d0ec0a5136496514d44d3aaab6616ed6390b80e48ab201aae5ffc4fbaf4a37699bef367e346a97f606c417b260a448cb04f339152195ec922') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:37:04', '5a93b3a0eb352e0417efb12c43fbddf4a925c3b0ab2c12d1d7c75cd20534c2dc8fc0fb1f3b093d4c231aa43a9a0c800061551a17b1e7dcb5afb885cec3ff966c', '2010-08-26 19:37:04', 'joao', NULL, 'XlVRdogbLAG1vq3sVtd', '4d4ebd1ddd52cfde4709e6837e87d4a0ecd01643639d86fbd1c4ba7826993a98710bb0f67234cd9688a7e3d0173b92807b078cb13734829d93940105263084eb', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 4, 'teste')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mOpinion Load (0.5ms)[0m   [0;1mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 2[0m
+  [4;35;1mOpinion Create (0.6ms)[0m   [0mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 2, 6)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.3ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 6 and o.user_id = 3[0m
+  [4;36;1mOpinion Create (0.2ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 3, 6)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mselect count(*) as importance from messages m, opinions o where m.user_id = 4 and m.id = o.message_id[0m
+  [4;36;1mSQL (41.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.6ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mMessage Load (0.7ms)[0m   [0mSELECT * FROM `messages` LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (1.0ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mOpinion Create (1.0ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 2, 7)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM `messages` LIMIT 1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 7 and o.user_id = 2[0m
+  [4;36;1mSQL (32.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 'teste')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.7ms)[0m   [0mselect count(*) as importance from opinions where message_id = 1[0m
+  [4;36;1mSQL (53.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:37:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 16ms (View: 10, DB: 526) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'joao@xp.com.br') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'joao') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f02d301d3c07c0c6f7e8ac7d71b23bef14f1bd88a5319a38a2f3808178d45031d3ea233c841f7842966570687994a3431a2a16f49b0fb8f3783dbf68ee241944') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `username`, `gender`, `password_salt`, `persistence_token`, `age`, `email`, `civil`) VALUES('2010-08-26 19:37:04', '14c0c809254026971f0679268705f6c48e40d5663855437a0c2ab13a192ec1317126140378b685276c05402f47e324212c9a85270f35064fb4754e39be8fbf37', '2010-08-26 19:37:04', 'joao', NULL, '1uoxCO5U5caeeazlebEM', 'f02d301d3c07c0c6f7e8ac7d71b23bef14f1bd88a5319a38a2f3808178d45031d3ea233c841f7842966570687994a3431a2a16f49b0fb8f3783dbf68ee241944', NULL, 'joao@xp.com.br', NULL)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 5, 'blá blá blá 1')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Processing MessagesController#index (for 0.0.0.0 at 2010-08-26 16:37:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mMessage Load (0.8ms)[0m   [0mSELECT * FROM `messages` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+Completed in 29ms (View: 24, DB: 8) | 200 OK [http://test.host/]
+  [4;35;1mSQL (32.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+
+
+Processing MessagesController#create (for 0.0.0.0 at 2010-08-26 16:37:04) [POST]
+  Parameters: {"action"=>"create", "controller"=>"messages", "message"=>{"user_id"=>1, "content"=>"blá blá blá 1"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO `messages` (`created_at`, `updated_at`, `user_id`, `content`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', 1, 'blá blá blá 1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 5ms (DB: 33) | 302 Found [http://test.host/messages?message%5Bcontent%5D=bl%C3%A1+bl%C3%A1+bl%C3%A1+1&message%5Buser_id%5D=1]
+  [4;36;1mSQL (44.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing MessagesController#opinion (for 0.0.0.0 at 2010-08-26 16:37:04) [POST]
+  Parameters: {"number"=>"1", "action"=>"opinion", "controller"=>"messages", "message"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mOpinion Load (0.5ms)[0m   [0mselect count(*) as count from opinions o where o.message_id = 1 and o.user_id = 1[0m
+  [4;36;1mOpinion Create (0.3ms)[0m   [0;1mINSERT INTO `opinions` (`created_at`, `updated_at`, `opinion`, `user_id`, `message_id`) VALUES('2010-08-26 19:37:04', '2010-08-26 19:37:04', NULL, 1, 1)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/messages
+Completed in 6ms (DB: 46) | 302 Found [http://test.host/opinion/1/1]
+  [4;36;1mSQL (40.5ms)[0m   [0;1mROLLBACK[0m

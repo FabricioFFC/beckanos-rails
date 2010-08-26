@@ -50,6 +50,7 @@
           <div class = "opinion">
             <%=link_to "Concordar", opinion_path(:message=>message.id,:number=>1)%>
             <%=link_to "Descordar", opinion_path(:message=>message.id,:number=>0)%>
+            <%=link_to "Comentar", new_comment_path(:message=>message.id)%>
           </div>
           </td>
           </tr>
